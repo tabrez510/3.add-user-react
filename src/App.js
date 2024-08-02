@@ -6,13 +6,16 @@ function App() {
   const [userList, setUserList] = useState([]);
   const addUserHandler = (uName, uAge) => {
     setUserList((prevState) => {
-      return [...prevState, {name: uName, age: uAge, id: Math.random().toString()}];
-    })
-  }
+      return [
+        ...prevState,
+        { name: uName, age: uAge, id: Math.random().toString() },
+      ];
+    });
+  };
   return (
     <>
-      <AddUser onAddUser={addUserHandler}/>
-      <UsersList users={userList}/>
+      <AddUser onAddUser={addUserHandler} />
+      <UsersList users={userList} />
     </>
   );
 }
